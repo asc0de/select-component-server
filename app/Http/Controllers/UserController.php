@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use stdClass;
 
 class UserController extends Controller
 {
@@ -55,6 +54,6 @@ class UserController extends Controller
             );
         };
 
-        return response()->json($filteredUsers, 200, [ 'Content-Type' => 'application/json; charset=utf-8' ], JSON_UNESCAPED_UNICODE );
+        return response()->json(array_values($filteredUsers), 200, [ 'Content-Type' => 'application/json; charset=utf-8' ], JSON_UNESCAPED_UNICODE );
     }
 }
